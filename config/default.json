@@ -1,0 +1,6 @@
+{
+  "PORT": 8888,
+  "HOST": "localhost",
+  "MONGO_PATH": 27017,
+  "MONGO_HOST": "localhost"
+}
