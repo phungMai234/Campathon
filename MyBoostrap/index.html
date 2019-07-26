@@ -1,0 +1,542 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPets</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<script src="./lib/jquery.js"></script>
+  <style>
+  body {
+    position: relative; 
+  }
+  .affix {
+    top:0;
+    width: 100%;
+    z-index: 9999 !important;
+  }
+
+  .affix ~ .container-fluid {
+   position: relative;
+   top: 50px;
+  }
+  #section1 {padding-top:1000px;height:500px;color: #fff;background-color: transparent;}
+  #section2 {padding-top:1000px;height:500px;color: #fff; background-color: #2d2d30;}
+  #section3 {padding-top:50px;height:500px;color: #fff; background-color: #ff9800;}
+  #section41 {padding-top:50px;height:500px;color: #fff; background-color: #00bcd4;}
+  #section42 {padding-top:50px;height:500px;color: #fff; background-color: #009688;}
+  </style>
+	</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50"  style="background-color: currentColor">
+<!--Menu-->
+<div class="container-fluid" style="color:#fff;height:90px;">
+  <nav class="navbar navbar-default navbar-fixed-top" data-spy="affix" data-offset-top="197">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+      </button>
+      
+    </div>
+
+    <div class="collapse navbar-collapse" id="myNavbar">
+		<!--Logo-->
+		  <img src="img/LovePets.png" class="nav navbar-nav navbar-left">
+
+		  <h4 class="nav navbar-nav navbar-left">MyPets</h4>
+		<!--Thanh search-->
+		<ul class="nav navbar-nav navbar-left" >
+			<li class="col-xs-8" style="margin-top: 20px">
+    			<input class="form-control" list="news" name="news" type="text">
+				
+  					<datalist id="news">
+    					<option value="Thông tin cơ bản về mèo Laperm">
+    					<option value="Biện pháp khống chế hành vi hung hãn của chó">
+    					<option value="Nhận biết và cách xử lí khi mèo bị nhiễm trùng hệ tiêu hóa">
+    					<option value="Cách nhận biết mèo bị bệnh dại và những điều bạn cần làm">
+    					<option value="Những thứ cần chuẩn bị trước khi nuôi một bé mèo">
+						<option value="Sự thật về giống chó BullDog Mỹ">
+						<option value="Tìm hiểu về tiêu chuẩn cân nặng của giống chó Samoyed">
+						<option value="Hội chứng Cushing ở chó và những điều cần biết">
+						<option value="Đôi nét về giống chó Akita Inu thuần chủng">
+						<option value="Thực đơn giúp mèo nhà bạn tăng cân">
+						<option value="Nên cho mèo ăn mấy lần 1 ngày">
+						<option value="Bạn nên làm gì khi mèo lười ăn">
+  					</datalist>
+  			</li>
+      		<li class="input-group-btn">
+        		<button type="button" onclick="login-register/src/routers/titleRouter.js" class="btn btn-info" style="margin-top: 20px;margin-left: 10px">
+					<span class="glyphicon glyphicon-search"></span> Search
+    			</button>
+	  		</li>
+		</ul>
+        <ul class="nav navbar-nav navbar-right">
+          	<li><a href="index.html" style="width: 150px; text-align: center"><h4>Trang chủ</h4></a></li>
+          	<li class="dropdown" style=" width: 150px"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="text-align: center"><h4>Chó<span class="caret"></h4></span></a>
+            	<ul class="dropdown-menu" style="background-color: antiquewhite">
+              		<li><a href="Dog/Dogs1.html">Chăm sóc chó</a></li>
+              		<li><a href="Dog/Dogs2.html">Thức ăn cho chó</a></li>
+            	</ul>
+          	</li>
+			<li class="dropdown" style=" width: 150px"><a class="dropdown-toggle" data-toggle="dropdown" href="#"  style="text-align: center"><h4>Mèo<span class="caret"></h4></span></a>
+            	<ul class="dropdown-menu" style="background-color: antiquewhite">
+              		<li><a href="Cat/Cat1.html">Chăm sóc mèo</a></li>
+              		<li><a href="Cat/Cat2.html">Thức ăn cho mèo</a></li>
+            	</ul>
+        	</li>
+			<li><a href="#section4" style="width: 150px;text-align: center"><h4>Cấp cứu</h4></li>
+        </ul>
+      </div>
+  </div>
+</nav>    
+</div>
+
+<!--Slide-->
+<div class="container slide-top">
+   
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+	  
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="img/bigcat.jpg" alt="cat" style="width:100%;height: 100%">
+      </div>
+
+      <div class="item">
+        <img src="img/bigdog.jpg" alt="dog" style="width:100%;">
+      </div>
+    
+      <div class="item">
+        <img src="img/bigdog2.jpg" alt="new cat" style="width:100%;height: 100%">
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+<!--Tin tức-->
+	
+	<div id="portfolio" class="container-fluid text-center bg-grey" style="margin-top: 300px;background-color: #F8E3FB ">
+			
+  			<h2 class="title-name"><img src="img/foot.png" width="30" height="30" style="margin-right: 10px">Tin tức<img src="img/foot.png" width="30" height="30" style="margin-left: 10px"></h2><br><br><br>
+		
+  			<div class="row text-center slideanim">
+    		<div class="col-sm-4">
+      			<div class="thumbnail" >
+        			<img src="img/cat.jpg" class="img-rounded" alt="Cinque Terre" width="390" height="300">
+        			<a href="content/c1.html" >Thông tin cơ bản về mèo Laperm</a>
+      			</div>
+    		</div>
+    		<div class="col-sm-4">
+      			<div class="thumbnail">
+        			<img src="img/dog2.jpg" class="img-rounded" alt="Cinque Terre" width="470" height="300">
+        			<a href="#" >Biện pháp khống chế hành vi hung hãn của chó</a>
+      			</div>
+    		</div>
+    		<div class="col-sm-4">
+      			<div class="thumbnail">
+        			<img src="img/cat1.gif" class="img-rounded" alt="Cinque Terre" width="400" height="300">
+        			<a href="#" >Nhận biết và cách xử lí khi mèo bị nhiễm trùng hệ tiêu hóa</a>
+      			</div>
+    		</div>
+			<div class="col-sm-4">
+      			<div class="thumbnail">
+        			<img src="img/cat3.jpg" class="img-rounded" alt="Cinque Terre" width="390" height="300">
+        			<a href="#" >Cách nhận biết mèo bị bệnh dại và những điều bạn cần làm</a>
+      			</div>
+    		</div>
+			<div class="col-sm-4">
+      			<div class="thumbnail">
+        			<img src="img/cat2.jpg" class="img-rounded" alt="Cinque Terre" width="390" height="300">
+        			<a href="#" >Những thứ cần chuẩn bị trước khi nuôi một bé mèo</a>
+      			</div>
+			</div>
+  
+	<div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="img/dog3.jpg" class="img-rounded" alt="Cinque Terre" width="400" height="300">
+        <a href="#">Sự thật về giống chó BullDog Mỹ</a>
+      </div>
+    </div>
+	  <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="img/dog5.jpg" class="img-rounded" alt="Cinque Terre" width="400" height="300">
+        <a href="#" >Tìm hiểu về tiêu chuẩn cân nặng của giống chó Samoyed</a>
+      </div>
+    </div>
+  
+	<div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="img/dog4.jpg" class="img-rounded" alt="Cinque Terre" width="400" height="300">
+        <a href="#" >Hội chứng Cushing ở chó và những điều cần biết</a>
+      </div>
+    </div>
+	  <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="img/dog6.jpg" class="img-rounded" alt="Cinque Terre" width="400" height="300">
+        <a href="#" >Đôi nét về giống chó Akita Inu thuần chủng</a>
+      </div>
+    </div>
+	 <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="img/cat6.jpg" class="img-rounded" alt="Cinque Terre" width="400" height="300">
+        <a href="#" >Thực đơn giúp mèo nhà bạn tăng cân</a>
+      </div>
+    </div>
+	 <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="img/cat7.jpg" class="img-rounded" alt="Cinque Terre" width="400" height="300">
+        <a href="#" >Nên cho mèo ăn mấy lần 1 ngày</a>
+      </div>
+    </div>
+	 
+	<div class="col-sm-4">
+	 <div class="thumbnail">
+        <img src="img/cat5.jpg" class="img-rounded" alt="Cinque Terre" width="420" height="300">
+        <a href="#" >Bạn nên làm gì khi mèo lười ăn</a>
+      </div>
+    </div>
+  </div>
+ <!--On top-->
+	
+		<!--<div class="vc_row wpb_row vc_row-fluid">
+		<div class="wpb_column vc_column_container vc_col-sm-12">
+			<div class="vc_column-inner " style=" text-align:center; ">
+				<div class="wpb_wrapper"><div id="uvc-type-wrap-4704" data-ultimate-target="#uvc-type-wrap-4704" data-responsive-json-new="{&quot;font-size&quot;:&quot;desktop:30px;&quot;,&quot;line-height&quot;:&quot;desktop:30px;&quot;}" class="uvc-type-wrap  ult-adjust-bottom-margin ult-responsive  uvc-type-align-left uvc-type-no-prefix uvc-wrap-3101207705d34751825fb6" style="font-weight:bold;text-align:left;"><span id="typed-3101207705d34751825fb6" class="ultimate-typed-main fancytext-typewriter-background-enabled" style="color:#000000;background:#ffffff;">VIDEO HÀI HƯỚC</span><span class="typed-cursor">|</span><script type="text/javascript"> 
+						jQuery(function($){ 
+							$(document).ready(function(){
+								if( typeof jQuery("#typed-3101207705d34751825fb6").typed == "function"){
+									$("#typed-3101207705d34751825fb6").typed({
+										strings: ["VIDEO HÀI HƯỚC"],
+										typeSpeed: 35,
+										backSpeed: 0,
+										startDelay: 200,
+										backDelay: 1500,
+										loop: true,
+										loopCount: false,
+										showCursor: true,
+										cursorChar: "|",
+										attr: null
+									});
+								}
+							});
+						});
+					</script>
+					</div>
+					<div id="ult-carousel-7400639165d3475182616a" class="ult-carousel-wrapper   ult_horizontal" data-gutter="15" data-rtl="false">
+						<div class="ult-carousel-1703788495d347518260f6 slick-initialized slick-slider slick-dotted" role="toolbar">
+							<button type="button" role="button" aria-label="Previous" style="color: rgb(51, 51, 51); font-size: 30px; display: block;" class="slick-prev default slick-arrow">
+								<i class="ultsl-arrow-left3"></i></button><div aria-live="polite" class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 2520px; transform: translate3d(-420px, 0px, 0px);" role="listbox"><div class="ult-item-wrap slick-slide slick-cloned" data-animation="animated no-animation" style="width: 180px;" data-slick-index="-2" aria-hidden="true" tabindex="-1">
+	<div class="wpb_video_widget wpb_content_element vc_clearfix   vc_video-aspect-ratio-169 vc_video-el-width-100 vc_video-align-left">
+		<div class="wpb_wrapper">
+			
+			<div class="wpb_video_wrapper"><iframe width="120" height="100" src="https://www.youtube.com/embed/VpKlVwuRCN8?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+		</div>
+	</div>
+</div><div class="ult-item-wrap slick-slide slick-cloned" data-animation="animated no-animation" style="width: 180px;" data-slick-index="-1" aria-hidden="true" tabindex="-1">
+	<div class="wpb_video_widget wpb_content_element vc_clearfix   vc_video-aspect-ratio-169 vc_video-el-width-100 vc_video-align-left">
+		<div class="wpb_wrapper">
+			
+			<div class="wpb_video_wrapper"><iframe width="1200" height="675" src="https://www.youtube.com/embed/videoseries?list=PLIqQljekkQYDkfyWbbRCZQD7M-0HxmZN8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+		</div>
+	</div>
+</div><div class="ult-item-wrap slick-slide slick-current slick-active animated no-animation" data-animation="animated no-animation" style="width: 180px;" data-slick-index="0" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide00">
+	<div class="wpb_video_widget wpb_content_element vc_clearfix   vc_video-aspect-ratio-169 vc_video-el-width-100 vc_video-align-left">
+		<div class="wpb_wrapper">
+			
+			<div class="wpb_video_wrapper"><iframe width="1200" height="900" src="https://www.youtube.com/embed/cTDJajKFZ-U?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+		</div>
+	</div>
+</div><div class="ult-item-wrap slick-slide slick-active animated no-animation" data-animation="animated no-animation" style="width: 180px;" data-slick-index="1" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide01">
+	<div class="wpb_video_widget wpb_content_element vc_clearfix   vc_video-aspect-ratio-169 vc_video-el-width-100 vc_video-align-left">
+		<div class="wpb_wrapper">
+			
+			<div class="wpb_video_wrapper"><iframe width="1200" height="675" src="https://www.youtube.com/embed/iNvQE-nIYwg?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+		</div>
+	</div>
+</div><div class="ult-item-wrap slick-slide" data-animation="animated no-animation" style="width: 180px;" data-slick-index="2" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide02">
+	<div class="wpb_video_widget wpb_content_element vc_clearfix   vc_video-aspect-ratio-169 vc_video-el-width-100 vc_video-align-left">
+		<div class="wpb_wrapper">
+			
+			<div class="wpb_video_wrapper"><iframe width="1200" height="675" src="https://www.youtube.com/embed/2eXPFjDWLRE?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+		</div>
+	</div>
+</div><div class="ult-item-wrap slick-slide" data-animation="animated no-animation" style="width: 180px;" data-slick-index="3" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide03">
+	<div class="wpb_video_widget wpb_content_element vc_clearfix   vc_video-aspect-ratio-169 vc_video-el-width-100 vc_video-align-left">
+		<div class="wpb_wrapper">
+			
+			<div class="wpb_video_wrapper"><iframe width="1200" height="675" src="https://www.youtube.com/embed/avXS4tVE5a8?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+		</div>
+	</div>
+</div><div class="ult-item-wrap slick-slide" data-animation="animated no-animation" style="width: 180px;" data-slick-index="4" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide04">
+	<div class="wpb_video_widget wpb_content_element vc_clearfix   vc_video-aspect-ratio-169 vc_video-el-width-100 vc_video-align-left">
+		<div class="wpb_wrapper">
+			
+			<div class="wpb_video_wrapper"><iframe width="1200" height="675" src="https://www.youtube.com/embed/kwax5Tg9G28?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+		</div>
+	</div>
+</div><div class="ult-item-wrap slick-slide" data-animation="animated no-animation" style="width: 180px;" data-slick-index="5" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide05">
+	<div class="wpb_video_widget wpb_content_element vc_clearfix   vc_video-aspect-ratio-169 vc_video-el-width-100 vc_video-align-left">
+		<div class="wpb_wrapper">
+			
+			<div class="wpb_video_wrapper"><iframe width="1200" height="675" src="https://www.youtube.com/embed/yjNUjhUwpkE?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+		</div>
+	</div>
+</div><div class="ult-item-wrap slick-slide" data-animation="animated no-animation" style="width: 180px;" data-slick-index="6" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide06">
+	<div class="wpb_video_widget wpb_content_element vc_clearfix   vc_video-aspect-ratio-169 vc_video-el-width-100 vc_video-align-left">
+		<div class="wpb_wrapper">
+			
+			<div class="wpb_video_wrapper"><iframe width="1200" height="675" src="https://www.youtube.com/embed/VpKlVwuRCN8?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+		</div>
+	</div>
+</div><div class="ult-item-wrap slick-slide" data-animation="animated no-animation" style="width: 180px;" data-slick-index="7" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide07">
+	<div class="wpb_video_widget wpb_content_element vc_clearfix   vc_video-aspect-ratio-169 vc_video-el-width-100 vc_video-align-left">
+		<div class="wpb_wrapper">
+			
+			<div class="wpb_video_wrapper"><iframe width="1200" height="675" src="https://www.youtube.com/embed/videoseries?list=PLIqQljekkQYDkfyWbbRCZQD7M-0HxmZN8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+		</div>
+	</div>
+</div><div class="ult-item-wrap slick-slide slick-cloned" data-animation="animated no-animation" style="width: 180px;" data-slick-index="8" aria-hidden="true" tabindex="-1">
+	<div class="wpb_video_widget wpb_content_element vc_clearfix   vc_video-aspect-ratio-169 vc_video-el-width-100 vc_video-align-left">
+		<div class="wpb_wrapper">
+			
+			<div class="wpb_video_wrapper"><iframe width="1200" height="900" src="https://www.youtube.com/embed/cTDJajKFZ-U?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+		</div>
+	</div>
+</div><div class="ult-item-wrap slick-slide slick-cloned" data-animation="animated no-animation" style="width: 180px;" data-slick-index="9" aria-hidden="true" tabindex="-1">
+	<div class="wpb_video_widget wpb_content_element vc_clearfix   vc_video-aspect-ratio-169 vc_video-el-width-100 vc_video-align-left">
+		<div class="wpb_wrapper">
+			
+			<div class="wpb_video_wrapper"><iframe width="1200" height="675" src="https://www.youtube.com/embed/iNvQE-nIYwg?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+		</div>
+	</div>
+</div></div></div><button type="button" role="button" aria-label="Next" style="color: rgb(51, 51, 51); font-size: 30px; display: block;" class="slick-next default slick-arrow"><i class="ultsl-arrow-right3"></i></button><ul class="slick-dots" style="display: block;" role="tablist"><li class="slick-active" aria-hidden="false" role="presentation" aria-selected="true" aria-controls="navigation00" id="slick-slide00"><i type="button" style="color:#333333;" class="ultsl-record" data-role="none"></i></li><li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation01" id="slick-slide01"><i type="button" style="color:#333333;" class="ultsl-record" data-role="none"></i></li><li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation02" id="slick-slide02"><i type="button" style="color:#333333;" class="ultsl-record" data-role="none"></i></li><li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation03" id="slick-slide03"><i type="button" style="color:#333333;" class="ultsl-record" data-role="none"></i></li></ul></div></div>			<script type="text/javascript">
+				jQuery(document).ready(function ($) {
+					if( typeof jQuery('.ult-carousel-1703788495d347518260f6').slick == "function"){
+						$('.ult-carousel-1703788495d347518260f6').slick({dots: true,autoplaySpeed: 5000,speed: 300,infinite: true,arrows: true,nextArrow: '<button type="button" role="button" aria-label="Next" style="color:#333333; font-size:30px;" class="slick-next default"><i class="ultsl-arrow-right3"></i></button>',prevArrow: '<button type="button" role="button" aria-label="Previous" style="color:#333333; font-size:30px;" class="slick-prev default"><i class="ultsl-arrow-left3"></i></button>',slidesToScroll:3,slidesToShow:3,swipe: true,draggable: true,touchMove: true,pauseOnHover: true,pauseOnFocus: false,responsive: [
+							{
+							  breakpoint: 1026,
+							  settings: {
+								slidesToShow: 3,
+								slidesToScroll: 3,  
+							  }
+							},
+							{
+							  breakpoint: 1025,
+							  settings: {
+								slidesToShow: 3,
+								slidesToScroll: 3
+							  }
+							},
+							{
+							  breakpoint: 760,
+							  settings: {
+								slidesToShow: 2,
+								slidesToScroll: 2
+							  }
+							}
+						],pauseOnDotsHover: true,customPaging: function(slider, i) {
+                   return '<i type="button" style= "color:#333333;" class="ultsl-record" data-role="none"></i>';
+                },});
+					}
+				});
+			</script>
+			<div id="ult-carousel-17445796075d34751828cdb" class="ult-carousel-wrapper   ult_horizontal" data-gutter="15" data-rtl="false"><div class="ult-carousel-9571728055d34751828c6f slick-initialized slick-slider slick-dotted" role="toolbar"><button type="button" role="button" aria-label="Previous" style="color: rgb(51, 51, 51); font-size: 30px; display: block;" class="slick-prev default slick-arrow"><i class="ultsl-arrow-left3"></i></button><div aria-live="polite" class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 2520px; transform: translate3d(-420px, 0px, 0px);" role="listbox"><div class="ult-item-wrap slick-slide slick-cloned" data-animation="animated no-animation" style="width: 180px;" data-slick-index="-2" aria-hidden="true" tabindex="-1">
+	<div class="wpb_video_widget wpb_content_element vc_clearfix   vc_video-aspect-ratio-169 vc_video-el-width-100 vc_video-align-left">
+		<div class="wpb_wrapper">
+			
+			<div class="wpb_video_wrapper"><iframe width="1200" height="675" src="https://www.youtube.com/embed/Pl5viSgjzng?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+		</div>
+	</div>
+</div><div class="ult-item-wrap slick-slide slick-cloned" data-animation="animated no-animation" style="width: 180px;" data-slick-index="-1" aria-hidden="true" tabindex="-1">
+	<div class="wpb_video_widget wpb_content_element vc_clearfix   vc_video-aspect-ratio-169 vc_video-el-width-100 vc_video-align-left">
+		<div class="wpb_wrapper">
+			
+			<div class="wpb_video_wrapper"><iframe width="1200" height="675" src="https://www.youtube.com/embed/0dSb98dGMzk?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+		</div>
+	</div>
+</div><div class="ult-item-wrap slick-slide slick-current slick-active animated no-animation" data-animation="animated no-animation" style="width: 180px;" data-slick-index="0" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide10">
+	<div class="wpb_video_widget wpb_content_element vc_clearfix   vc_video-aspect-ratio-169 vc_video-el-width-100 vc_video-align-left">
+		<div class="wpb_wrapper">
+			
+			<div class="wpb_video_wrapper"><iframe width="1200" height="675" src="https://www.youtube.com/embed/eNJPDuDnREo?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+		</div>
+	</div>
+</div><div class="ult-item-wrap slick-slide slick-active animated no-animation" data-animation="animated no-animation" style="width: 180px;" data-slick-index="1" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide11">
+	<div class="wpb_video_widget wpb_content_element vc_clearfix   vc_video-aspect-ratio-169 vc_video-el-width-100 vc_video-align-left">
+		<div class="wpb_wrapper">
+			
+			<div class="wpb_video_wrapper"><iframe width="1200" height="675" src="https://www.youtube.com/embed/drSk-8fwYAA?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+		</div>
+	</div>
+</div><div class="ult-item-wrap slick-slide" data-animation="animated no-animation" style="width: 180px;" data-slick-index="2" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide12">
+	<div class="wpb_video_widget wpb_content_element vc_clearfix   vc_video-aspect-ratio-169 vc_video-el-width-100 vc_video-align-left">
+		<div class="wpb_wrapper">
+			
+			<div class="wpb_video_wrapper"><iframe width="1200" height="675" src="https://www.youtube.com/embed/d1zfjt4zi7g?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+		</div>
+	</div>
+</div><div class="ult-item-wrap slick-slide" data-animation="animated no-animation" style="width: 180px;" data-slick-index="3" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide13">
+	<div class="wpb_video_widget wpb_content_element vc_clearfix   vc_video-aspect-ratio-169 vc_video-el-width-100 vc_video-align-left">
+		<div class="wpb_wrapper">
+			
+			<div class="wpb_video_wrapper"><iframe width="1200" height="675" src="https://www.youtube.com/embed/mx2fY2TxWMc?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+		</div>
+	</div>
+</div><div class="ult-item-wrap slick-slide" data-animation="animated no-animation" style="width: 180px;" data-slick-index="4" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide14">
+	<div class="wpb_video_widget wpb_content_element vc_clearfix   vc_video-aspect-ratio-169 vc_video-el-width-100 vc_video-align-left">
+		<div class="wpb_wrapper">
+			
+			<div class="wpb_video_wrapper"><iframe width="1200" height="675" src="https://www.youtube.com/embed/3mSu8Lb9GXM?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+		</div>
+	</div>
+</div><div class="ult-item-wrap slick-slide" data-animation="animated no-animation" style="width: 180px;" data-slick-index="5" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide15">
+	<div class="wpb_video_widget wpb_content_element vc_clearfix   vc_video-aspect-ratio-169 vc_video-el-width-100 vc_video-align-left">
+		<div class="wpb_wrapper">
+			
+			<div class="wpb_video_wrapper"><iframe width="1200" height="675" src="https://www.youtube.com/embed/HVs5bRJ_DvI?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+		</div>
+	</div>
+</div><div class="ult-item-wrap slick-slide" data-animation="animated no-animation" style="width: 180px;" data-slick-index="6" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide16">
+	<div class="wpb_video_widget wpb_content_element vc_clearfix   vc_video-aspect-ratio-169 vc_video-el-width-100 vc_video-align-left">
+		<div class="wpb_wrapper">
+			
+			<div class="wpb_video_wrapper"><iframe width="1200" height="675" src="https://www.youtube.com/embed/Pl5viSgjzng?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+		</div>
+	</div>
+</div><div class="ult-item-wrap slick-slide" data-animation="animated no-animation" style="width: 180px;" data-slick-index="7" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide17">
+	<div class="wpb_video_widget wpb_content_element vc_clearfix   vc_video-aspect-ratio-169 vc_video-el-width-100 vc_video-align-left">
+		<div class="wpb_wrapper">
+			
+			<div class="wpb_video_wrapper"><iframe width="1200" height="675" src="https://www.youtube.com/embed/0dSb98dGMzk?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+		</div>
+	</div>
+</div><div class="ult-item-wrap slick-slide slick-cloned" data-animation="animated no-animation" style="width: 180px;" data-slick-index="8" aria-hidden="true" tabindex="-1">
+	<div class="wpb_video_widget wpb_content_element vc_clearfix   vc_video-aspect-ratio-169 vc_video-el-width-100 vc_video-align-left">
+		<div class="wpb_wrapper">
+			
+			<div class="wpb_video_wrapper"><iframe width="1200" height="675" src="https://www.youtube.com/embed/eNJPDuDnREo?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+		</div>
+	</div>
+</div><div class="ult-item-wrap slick-slide slick-cloned" data-animation="animated no-animation" style="width: 180px;" data-slick-index="9" aria-hidden="true" tabindex="-1">
+	<div class="wpb_video_widget wpb_content_element vc_clearfix   vc_video-aspect-ratio-169 vc_video-el-width-100 vc_video-align-left">
+		<div class="wpb_wrapper">
+			
+			<div class="wpb_video_wrapper"><iframe width="1200" height="675" src="https://www.youtube.com/embed/drSk-8fwYAA?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+		</div>
+	</div>
+</div></div></div><button type="button" role="button" aria-label="Next" style="color: rgb(51, 51, 51); font-size: 30px; display: block;" class="slick-next default slick-arrow"><i class="ultsl-arrow-right3"></i></button><ul class="slick-dots" style="display: block;" role="tablist"><li class="slick-active" aria-hidden="false" role="presentation" aria-selected="true" aria-controls="navigation10" id="slick-slide10"><i type="button" style="color:#333333;" class="ultsl-record" data-role="none"></i></li><li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation11" id="slick-slide11"><i type="button" style="color:#333333;" class="ultsl-record" data-role="none"></i></li><li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation12" id="slick-slide12"><i type="button" style="color:#333333;" class="ultsl-record" data-role="none"></i></li><li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation13" id="slick-slide13"><i type="button" style="color:#333333;" class="ultsl-record" data-role="none"></i></li></ul></div></div>			<script type="text/javascript">
+				jQuery(document).ready(function ($) {
+					if( typeof jQuery('.ult-carousel-9571728055d34751828c6f').slick == "function"){
+						$('.ult-carousel-9571728055d34751828c6f').slick({dots: true,autoplaySpeed: 5000,speed: 300,infinite: true,arrows: true,nextArrow: '<button type="button" role="button" aria-label="Next" style="color:#333333; font-size:30px;" class="slick-next default"><i class="ultsl-arrow-right3"></i></button>',prevArrow: '<button type="button" role="button" aria-label="Previous" style="color:#333333; font-size:30px;" class="slick-prev default"><i class="ultsl-arrow-left3"></i></button>',slidesToScroll:3,slidesToShow:3,swipe: true,draggable: true,touchMove: true,pauseOnHover: true,pauseOnFocus: false,responsive: [
+							{
+							  breakpoint: 1026,
+							  settings: {
+								slidesToShow: 3,
+								slidesToScroll: 3,  
+							  }
+							},
+							{
+							  breakpoint: 1025,
+							  settings: {
+								slidesToShow: 3,
+								slidesToScroll: 3
+							  }
+							},
+							{
+							  breakpoint: 760,
+							  settings: {
+								slidesToShow: 2,
+								slidesToScroll: 2
+							  }
+							}
+						],pauseOnDotsHover: true,customPaging: function(slider, i) {
+                   return '<i type="button" style= "color:#333333;" class="ultsl-record" data-role="none"></i>';
+                },});
+					}
+				});
+			</script>
+			</div></div></div></div>-->
+		<div class="video" style=" background-color: #F8E3FB" >
+		<hr  width="30%" align="center" /> 
+		<h2 class="title-name"><img src="img/foot.png" width="30" height="30" style="margin-right: 10px">Video Hài hước<img src="img/foot.png" width="30" height="30" style="margin-left: 10px"></h2><br><br><br>
+		<div class="row text-center slideanim" >
+			
+    		<div class="col-sm-4"  style="margin-bottom: 70px">
+      			
+				<iframe class="youtube-link" src="https://www.youtube.com/embed/VpKlVwuRCN8?feature=oembed" frameborder="0" allowfullscreen></iframe>
+        
+    		</div>
+    		<div class="col-sm-4" style="margin-bottom: 70px">
+      			
+				<iframe class="youtube-link" src="https://www.youtube.com/embed/videoseries?list=PLIqQljekkQYDkfyWbbRCZQD7M-0HxmZN8" frameborder="0" allowfullscreen></iframe>
+      			
+    		</div>
+			
+    		<div class="col-sm-4" style="margin-bottom: 70px">
+      			
+				<iframe class="youtube-link" src="https://www.youtube.com/embed/drSk-8fwYAA?feature=oembed" frameborder="0" allowfullscreen></iframe>
+      			
+    		</div>
+		
+    		<div class="col-sm-4" style="margin-bottom: 70px">
+      			
+				<iframe class="youtube-link" src="https://www.youtube.com/embed/eNJPDuDnREo?feature=oembed" frameborder="0" allowfullscreen></iframe>
+      			
+    		</div>
+	
+    		<div class="col-sm-4" style="margin-bottom: =70px">
+      			
+				<iframe class="youtube-link" src="https://www.youtube.com/embed/0dSb98dGMzk?feature=oembed" frameborder="0" allowfullscreen></iframe>
+      			
+    		</div>
+		</div>
+	</div>
+<button onclick="topFunction()" id="myBtn" title="Go to top"><img src="img/top.png" style="width: 50px; height: 53px; margin-top:600px ;margin-left: 1370px" data-spy="affix" data-offset-top="197"></button> 
+	<script>
+     // When the user scrolls down 20px from the top of the document, show the button
+     window.onscroll = function() {scrollFunction()};
+     function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    document.getElementById("myBtn").style.display = "block";
+                } else {
+                    document.getElementById("myBtn").style.display = "none";
+                }
+            }
+            // When the user clicks on the button, scroll to the top of the document
+            function topFunction() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }
+</script>
+		<!-- Footer -->
+<footer class="text-center">
+	<h4>UETCodeCamp</h4>
+      <p>Copyright &copy; 2019 &middot; All Rights Reserved &middot; <a href="https://www.facebook.com/petsne/?__tn__=%2Cd%2CP-R&eid=ARCtNhwcem23O2cI7Z2YEfUwNuEmDUlIhBpuCm_1MBGx-Ew2x4DMxSUIWbZYW3q7MQw4faxkJ6dNylkr" >MyPets</a></p>
+</footer>
+
+</div>
+</body>
+</html>
