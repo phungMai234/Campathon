@@ -18,5 +18,6 @@ const postSchema = new Schema({
         type:Number
     }
 });
+//postSchema.index({title: 'text', content:'text'})
 const Post = db.model('Post', postSchema);
 module.exports = Post; // k duoc de {}

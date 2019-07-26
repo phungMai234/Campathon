@@ -34,13 +34,15 @@ exports.createPost = async (req, res) =>{
 exports.searchPost = async (req, res)=>{
     try {
         const {keyword} = req.body;
-
-        await Post.createIndex({
-            "content":"text"
-        })
-
-        let data = await Post.find({$text: {$search: keyword}}, {score: {$meta: "textScore"}}).sort({score:{$meta:"textScore"}})
-        return res.json(response.success(data));
+        if(!keyword)
+            throw new Error("full text is empty");
+        let data = await title.find({$text: {$search: keyword}}, {score: {$meta: "textScore"}}).sort({score:{$meta:"textScore"}})
+        if(!data)
+        {
+            throw new Error("No result");
+        }
+        else
+            return res.json(response.success({data}));
 
     }
     catch (e) {
