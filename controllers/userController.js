@@ -28,6 +28,7 @@ exports.register = async (req, res) =>{
             username:username,
             email: email,
             password:password,
+            like:0,
             created:Date.now()
         });
         console.log(newUser.id)

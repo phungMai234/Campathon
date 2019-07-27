@@ -1,4 +1,6 @@
 const Post = require('../models/postsModel');
+const User = require('../models/userModel')
+const Vote = require('../models/voteModel')
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const response = require('../utils/response');
@@ -68,5 +70,45 @@ exports.getTitleByID = async (req, res)=>{
     }
     catch (e) {
         res.json(response.fail(e));
+    }
+}
+exports.pressLike = async (req, res) =>{
+    try {
+        const {id} = req.params;
+        const usernow = await user.findById(req.tokenData.id);
+        if(!usernow)
+        {
+            throw new Error("You must be login");
+        }
+        else {
+            const postnow = await Post.findById(id);
+            if(!postnow)
+                throw new Error("No post is found");
+            else
+            {
+                const voteNow = await Vote.find({user_id:usernow._id})
+                if(voteNow)
+                {
+                    throw new Error("you liked")
+                }
+                else
+                {
+                    const newVote = new Vote({
+                        user_id: usernow._id,
+                        post_id:id
+                    })
+                    await postnow.updateOne({
+                        like: postnow.like++
+                    })
+                    return res.json(response.success({postnow}));
+                }
+
+
+            }
+        }
+
+    }
+    catch (e) {
+        res.json(response.fail(e))
     }
 }

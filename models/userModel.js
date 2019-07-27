@@ -21,6 +21,9 @@ const userShema = new Schema({
     },
     created:{
         type:Date
+    },
+    like:{
+        type:Number
     }
 }, {versionKey: false});
 

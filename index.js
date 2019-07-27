@@ -13,6 +13,7 @@ app.use(cors());
 app.use("/user", require('./routers/userRouter'));
 app.use("/posts", require('./routers/postsRouter'));
 app.use("/comment", require('./routers/commentRouter'))
+app.use("/vote", require('./routers/voteRouter'))
 
 app.listen(port, function (err) {
     if(err)
