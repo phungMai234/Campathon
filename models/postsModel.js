@@ -8,6 +8,9 @@ const postSchema = new Schema({
     title:{
         type: String
     },
+    image:{
+      type:String
+    },
     content:{
         type:String
     },
@@ -17,6 +20,7 @@ const postSchema = new Schema({
     like:{
         type:Number
     }
+
 });
 //postSchema.index({title: 'text', content:'text'})
 const Post = db.model('Post', postSchema);

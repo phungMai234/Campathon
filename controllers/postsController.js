@@ -6,7 +6,7 @@ const db = require('../database');
 
 exports.createPost = async (req, res) =>{
     try {
-        const {title, content} = req.body;
+        const {title, image, content} = req.body;
         if(!title || !content)
             throw new Error("Please fill full");
 
@@ -18,6 +18,7 @@ exports.createPost = async (req, res) =>{
         {
            const newPost = new Post({
                title:title,
+               image:image,
                content:content,
                create:Date.now(),
                like: 0
@@ -49,4 +50,21 @@ exports.searchPost = async (req, res)=>{
         res.json(response.fail(e));
     }
 }
-exports
+exports.listTitle = async (req, res) =>{
+    try {
+        const titles = await Post.find();
+        return res.json(response.success(titles));
+
+    }
+    catch (e) {
+        res.json(response.fail(e));
+    }
+}
+exports.getTitleByID = async (req, res)=>{
+    try {
+
+    }
+    catch (e) {
+        res.json(response.fail(e));
+    }
+}
