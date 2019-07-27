@@ -11,7 +11,10 @@ function verifyAccessToken(req, res, next)
             if(err)
                 return res.json(response.fail("error"));
             else
+            {
                 req.tokenData = decoded;
+            }
+
             next();
         })
     }
@@ -19,6 +22,4 @@ function verifyAccessToken(req, res, next)
         return res.json(response.fail("Token Missing"));
 }
 
-module.exports = {
-    verifyAccessToken
-};
+module.exports = verifyAccessToken; //k dc de {}

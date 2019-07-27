@@ -54,14 +54,14 @@ exports.login = async (req, res) =>{
         const sixHours = 6*60*60;
         if(match)
         {
-            const token = jwt.sign({
+            const token = await jwt.sign({
 
-                    id:userSignin.id
+                    id:userSignin._id
                 },
                 key.ACCESS_SECRET_KEY,
                 {
                     expiresIn: sixHours
-                })
+                });
             return res.json(response.success({token}));
         }
         else {
@@ -75,15 +75,20 @@ exports.login = async (req, res) =>{
         })
     }
 };
-
+/**
+ * loi
+ * */
 exports.changePassword = async (req, res) =>{
     try {
 
         const {old_password, new_password} = req.body;
-        const usernow = await user.findOne({id:req.tokenData.id});
+
+        const usernow = await user.findById(req.tokenData.id);
+
         if(usernow)
         {
-            const match = bcrypt.compareSync(old_password, user.password)
+
+            const match = bcrypt.compareSync(old_password, usernow.hash_password)
             if(match)
             {
                 if(new_password.length < 8){
@@ -95,7 +100,7 @@ exports.changePassword = async (req, res) =>{
                     hash_password:hashPassword
                 },{
                     where:{
-                        id:req.tokenData.id
+                        _id:req.tokenData.id
                     }
                 })
                 return res.json(response.success({}));
@@ -113,5 +118,14 @@ exports.changePassword = async (req, res) =>{
     }
     catch (e) {
         res.json(response.fail(e));
+    }
+}
+exports.getProfile = async (req, res)=>{
+    try {
+        const usernow = await user.findById(req.tokenData.id);
+        return res.json(response.success({usernow}));
+    } catch (err) {
+        console.log("Error: ", err.message);
+        return res.json(response.fail(err.message));
     }
 }

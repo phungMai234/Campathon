@@ -62,7 +62,9 @@ exports.listTitle = async (req, res) =>{
 }
 exports.getTitleByID = async (req, res)=>{
     try {
-
+        const {id} = req.params;
+        const fpost = await Post.findById(id);
+        return res.json(response.success(fpost));
     }
     catch (e) {
         res.json(response.fail(e));

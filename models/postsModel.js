@@ -19,6 +19,9 @@ const postSchema = new Schema({
     },
     like:{
         type:Number
+    },
+    comment:{
+        type:String
     }
 
 });
