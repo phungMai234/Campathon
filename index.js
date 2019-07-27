@@ -9,8 +9,9 @@ const app = express();
 app.use(BodyParser.json());
 app.use(BodyParser.urlencoded({ extended: true }));
 
-
+app.use("/user", require('./routers/userRouter'));
 app.use("/posts", require('./routers/postsRouter'));
+
 
 app.listen(port, host, function (err) {
     if(err)

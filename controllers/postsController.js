@@ -36,7 +36,7 @@ exports.searchPost = async (req, res)=>{
         const {keyword} = req.body;
         if(!keyword)
             throw new Error("full text is empty");
-        let data = await title.find({$text: {$search: keyword}}, {score: {$meta: "textScore"}}).sort({score:{$meta:"textScore"}})
+        let data = await Post.find({$text: {$search: keyword}}, {score: {$meta: "textScore"}}).sort({score:{$meta:"textScore"}})
         if(!data)
         {
             throw new Error("No result");
@@ -49,3 +49,4 @@ exports.searchPost = async (req, res)=>{
         res.json(response.fail(e));
     }
 }
+exports
