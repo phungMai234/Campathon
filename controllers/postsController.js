@@ -74,6 +74,7 @@ exports.getTitleByID = async (req, res)=>{
 }
 exports.pressLike = async (req, res) =>{
     try {
+
         const {id} = req.params;
         const usernow = await User.findById(req.tokenData.id);
         if(!usernow)
@@ -82,6 +83,8 @@ exports.pressLike = async (req, res) =>{
         }
         else {
             const postnow = await Post.findById(id);
+            let dem = postnow.like+1;
+            console.log(dem);
             if(!postnow)
                 throw new Error("No post is found");
             else
@@ -89,15 +92,18 @@ exports.pressLike = async (req, res) =>{
                 const voteNow = await Vote.findOne({user_id: usernow._id, post_id:id}) // de find se bi loi vi no tim tat ca
                 if(!voteNow)
                 {
+                    console.log(dem);
+                    await postnow.updateOne({
+                        like: ++dem
+                    })
 
                     const newVote = new Vote({
                         user_id: usernow._id,
                         post_id:id
                     })
                     await newVote.save();
-                    await postnow.updateOne({
-                        like: postnow.like++
-                    })
+
+
                     return res.json(response.success({postnow}));
                 }
                 else
