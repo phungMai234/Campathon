@@ -75,7 +75,7 @@ exports.getTitleByID = async (req, res)=>{
 exports.pressLike = async (req, res) =>{
     try {
         const {id} = req.params;
-        const usernow = await user.findById(req.tokenData.id);
+        const usernow = await User.findById(req.tokenData.id);
         if(!usernow)
         {
             throw new Error("You must be login");
@@ -86,21 +86,23 @@ exports.pressLike = async (req, res) =>{
                 throw new Error("No post is found");
             else
             {
-                const voteNow = await Vote.find({user_id:usernow._id})
-                if(voteNow)
+                const voteNow = await Vote.findOne({user_id: usernow._id, post_id:id}) // de find se bi loi vi no tim tat ca
+                if(!voteNow)
                 {
-                    throw new Error("you liked")
-                }
-                else
-                {
+
                     const newVote = new Vote({
                         user_id: usernow._id,
                         post_id:id
                     })
+                    await newVote.save();
                     await postnow.updateOne({
                         like: postnow.like++
                     })
                     return res.json(response.success({postnow}));
+                }
+                else
+                {
+                    throw new Error("you liked")
                 }
 
 

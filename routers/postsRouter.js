@@ -6,7 +6,7 @@ const controllerPosts= require("../controllers/postsController");
 
 router.get('/', controllerPosts.listTitle);
 router.get('/:id', controllerPosts.getTitleByID);
-router.get('/like/:id', controllerPosts.pressLike);
+router.get('/:id/like',verify, controllerPosts.pressLike);
 router.post('/create', controllerPosts.createPost);
 router.post('/search', verify, controllerPosts.searchPost);
 
