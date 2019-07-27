@@ -42,6 +42,7 @@ exports.register = async (req, res) =>{
 
 };
 exports.login = async (req, res) =>{
+        console.log("aaaa");
 
     try{
         let {username, password} = req.body;

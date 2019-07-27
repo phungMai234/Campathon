@@ -35,6 +35,7 @@ exports.createPost = async (req, res) =>{
     }
 }
 exports.searchPost = async (req, res)=>{
+    console.log("ahihi");
     try {
         const {keyword} = req.body;
         if(!keyword)
@@ -49,7 +50,8 @@ exports.searchPost = async (req, res)=>{
 
     }
     catch (e) {
-        res.json(response.fail(e));
+        console.log(e);
+        res.json(response.fail(e.message));
     }
 }
 exports.listTitle = async (req, res) =>{

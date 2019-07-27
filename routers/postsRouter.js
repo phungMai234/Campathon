@@ -8,7 +8,7 @@ router.get('/', controllerPosts.listTitle);
 router.get('/:id', controllerPosts.getTitleByID);
 router.get('/:id/like',verify, controllerPosts.pressLike);
 router.post('/create', controllerPosts.createPost);
-router.post('/search', verify, controllerPosts.searchPost);
+router.post('/search', controllerPosts.searchPost);
 
 
 module.exports = router;
