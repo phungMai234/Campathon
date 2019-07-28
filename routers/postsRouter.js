@@ -9,6 +9,7 @@ router.get('/:id', controllerPosts.getTitleByID);
 router.get('/:id/like',verify, controllerPosts.pressLike);
 router.post('/create', controllerPosts.createPost);
 router.post('/search', controllerPosts.searchPost);
-
+router.get('/search/dogs', controllerPosts.searchDog);
+router.get('/search/cats', controllerPosts.searchCat);
 
 module.exports = router;
